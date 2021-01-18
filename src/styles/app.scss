@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.head-title {
+  font-family: "Creepster", cursive;
+}
+.sub-title {
+  font-family: "Bungee", cursive;
+}
+.plex-title {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.results-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bold {
+  font-weight: bold;
+}
+.margin {
+  margin: 1rem 0rem 1rem 0rem;
+}
+@import "./nav";
+@import "./results";
+@import "./recipe";
+@import "./modal";
+@import "./ingredient";
+@import "./digest";

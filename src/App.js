@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+// Components
+import Nav from "./Components/Nav";
+import Results from "./Components/Results";
+import Modal from "./Components/Modal";
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState(null);
+  const [modalUp, setModalUp] = useState(false);
+  const [modalData, setModalData] = useState("");
+
+  const showModalHandler = (data) => {
+    setModalData(data);
+    setModalUp(!modalUp);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        searchResults={searchResults}
+        setSearchResults={setSearchResults}
+      />
+      <div className="results-div">
+        {searchResults ? (
+          <Results
+            searchResults={searchResults}
+            modalUp={modalUp}
+            setModalUp={setModalUp}
+            showModalHandler={showModalHandler}
+          />
+        ) : (
+          ""
+        )}
+      </div>
+      {modalUp ? (
+        <Modal
+          modalUp={modalUp}
+          setModalUp={setModalUp}
+          modalData={modalData}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

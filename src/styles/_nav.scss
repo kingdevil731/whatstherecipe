@@ -1,0 +1,42 @@
+.nav {
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.logo {
+  p {
+    font-size: 2rem;
+    color: blueviolet;
+  }
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  input {
+    height: 2rem;
+    border: 0.1px solid blueviolet;
+    border-radius: 5px;
+    color: red;
+    text-align: right;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 0rem 1rem;
+  }
+  button {
+    height: 2.1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: white;
+    cursor: pointer;
+  }
+}
+.settings {
+  p {
+    font-size: 2rem;
+    color: blueviolet;
+  }
+}
