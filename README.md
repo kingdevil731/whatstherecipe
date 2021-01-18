@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# What's my Recipe?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An app where you search for the recipes based on an igredient/content you search (e.g. Banana), and you can also check in detail the nutrition values, diet, proteins, daily, and much more.
+
+be free to push a commit if you have a suggestion/issue/improvement.
+
+### data provided by https://developer.edamam.com/edamam-docs-recipe-api
+
+## NB: the project is still WP / still in early phases
 
 ## Available Scripts
 

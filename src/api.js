@@ -1,7 +1,6 @@
 const baseUrl = "https://api.edamam.com/search";
-const apiId = "app_id=00b90847";
-const apiKey = "app_key=0b8f23d9bccff91819b96789a03741e3";
-
+const apiId = "";
+const apiKey = "";
 // paths
 /*
     query = Search Query
