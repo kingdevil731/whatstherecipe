@@ -11,6 +11,7 @@ be free to push a commit if you have a suggestion/issue/improvement.
 ### TODO LIST
 
 - [x] Base website with search functionality working
+- [ ] Add the rest of features
 - [ ] Migrate to use Redux for state Managment
 - [ ] Create advanced Search with multiple params
 - [ ] Create/Use React Router for routing pages/normal to advanced and vice versa
