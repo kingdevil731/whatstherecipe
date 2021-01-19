@@ -16,7 +16,7 @@ const Modal = ({ modalUp, setModalUp, modalData }) => {
       <div class="modal-content">
         <div class="top">
           <div class="name-large">{data.label}</div>
-          <button className="close" onclick={() => clickHandler()}>
+          <button className="close" onClick={() => clickHandler()}>
             X
           </button>
         </div>

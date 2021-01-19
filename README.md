@@ -8,6 +8,17 @@ be free to push a commit if you have a suggestion/issue/improvement.
 
 ## NB: the project is still WP / still in early phases
 
+### TODO LIST
+
+- [x] Base website with search functionality working
+- [ ] Migrate to use Redux for state Managment
+- [ ] Create advanced Search with multiple params
+- [ ] Create/Use React Router for routing pages/normal to advanced and vice versa
+- [ ] Add settings to swap between spanish and english, and maybe other config's
+- [ ] Add a modal to to Settings
+- [ ] Refactor Modal Component to be a HOC
+- [ ] TobeAdded
+
 ## Available Scripts
 
 In the project directory, you can run:
