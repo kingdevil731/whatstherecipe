@@ -6,9 +6,6 @@ const Recipe = ({
   calories,
   totalWeight,
   totalTime,
-  modalUp,
-  setModalData,
-  setModalUp,
   showModalHandler,
   recipe,
 }) => {
