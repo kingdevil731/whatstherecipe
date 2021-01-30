@@ -11,10 +11,10 @@ const Nav = ({ loaded, setLoaded }) => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-
+    setLoaded(false);
     dispatch(searchRecipes(searchQuery));
+    setLoaded(true);
     // Clear the Nav Input/Search
-    setLoaded(!loaded);
     setSearchQuery("");
   };
 
