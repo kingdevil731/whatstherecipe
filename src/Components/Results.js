@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // Components
 import Recipe from "./Recipe";
+// animation
+import { motion } from "framer-motion";
+import { easePopUp } from "../animations";
+// Redux
+import { useSelector } from "react-redux";
 
-const Results = ({ searchResults, setModalUp, modalUp, showModalHandler }) => {
+const Results = ({ setModalUp, modalUp, showModalHandler }) => {
+  const [searchResults, setSearchResults] = useState(null);
+  const state = useSelector((state) => state.results);
+
+  useEffect(() => setSearchResults(state), [state]);
   return (
-    <div className="results">
+    <motion.div
+      variants={easePopUp}
+      animate="show"
+      initial="hidden"
+      className="results"
+    >
       <div className="results-header sub-title">
-        <span className="title">Search Query: {searchResults.q}</span>
-        <span className="title">Results Count: {searchResults.count}</span>
+        <span className="title">Search Query: {searchResults?.query}</span>
+        <span className="title">Results Count: {searchResults?.count}</span>
       </div>
-      {searchResults &&
-        searchResults.hits.map((hit) => (
+      {/* replace searchResults?.more with a more suitable operand */}
+      {searchResults?.more &&
+        searchResults?.results?.map((hit) => (
           <Recipe
             key={hit.recipe.label}
             label={hit.recipe.label}
@@ -24,7 +39,7 @@ const Results = ({ searchResults, setModalUp, modalUp, showModalHandler }) => {
             recipe={hit}
           />
         ))}
-    </div>
+    </motion.div>
   );
 };
 
