@@ -1,19 +1,20 @@
-import React from "react";
-import axios from "axios";
-// api
-import { baseSearchUrl } from "../api";
+import React, { useState } from "react";
+// Redux
+import { useDispatch } from "react-redux";
+// Actions
+import { searchRecipes } from "../actions/resultsAction";
 
-const Nav = ({
-  searchQuery,
-  setSearchQuery,
-  searchResults,
-  setSearchResults,
-}) => {
+const Nav = ({ loaded, setLoaded }) => {
+  const dispatch = useDispatch();
+  // State
+  const [searchQuery, setSearchQuery] = useState("");
+
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    axios
-      .get(baseSearchUrl(searchQuery))
-      .then((data) => setSearchResults(data.data));
+
+    dispatch(searchRecipes(searchQuery));
+    // Clear the Nav Input/Search
+    setLoaded(!loaded);
     setSearchQuery("");
   };
 
