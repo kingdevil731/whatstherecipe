@@ -3,6 +3,8 @@ import React from "react";
 import Ingredient from "./Ingredient";
 import Digest from "./Digest";
 import Nutrient from "./Nutrient";
+// animation
+import { motion } from "framer-motion";
 
 // TODO Modal to be mobile responsive, currently the first part is broken
 const Modal = ({ modalUp, setModalUp, modalData }) => {
@@ -13,13 +15,13 @@ const Modal = ({ modalUp, setModalUp, modalData }) => {
 
   return (
     <div class={`container ${modalUp ? " visible " : "not-visible"}`}>
-      <div class="modal-content">
-        <div class="top">
+      <motion.div class="modal-content">
+        <motion.div class="top">
           <div class="name-large">{data.label}</div>
           <button className="close" onClick={() => clickHandler()}>
             X
           </button>
-        </div>
+        </motion.div>
         <div class="bottom">
           <div className="recipe-detailed">
             <div className="row">
@@ -90,11 +92,11 @@ const Modal = ({ modalUp, setModalUp, modalData }) => {
         </div>
         <div className="links">
           <p className="plex-title bold">Links</p>
-          <a href={data.uri}>Ontologies</a>
-          <a href={data.url}>Source Link</a>
-          <a href={data.shareAs}>Shareable Link</a>
+          <a href={data.uri || ""}>{data.label || "Unavailable"}</a>
+          <a href={data.url || ""}>{data.source || "Unavailable"}</a>
+          <a href={data.shareAs || ""}>Shareable Link</a>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
